@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Free Space</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+    </head>
+    <body>
+        <main class="conteudo">
+            <div class="totalVagas">
+                <div class="progresso">
+                    <div id="cont" data-info="4/4">
+                        <svg
+                            id="svg"
+                            width="200"
+                            height="200"
+                            viewPort="0 0 100 100"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle
+                                r="90"
+                                cx="100"
+                                cy="100"
+                                fill="transparent"
+                                stroke-dasharray="565.48"
+                                stroke-dashoffset="0"
+                            ></circle>
+                            <circle
+                                id="bar"
+                                r="90"
+                                cx="100"
+                                cy="100"
+                                fill="transparent"
+                                stroke-dasharray="565.48"
+                                stroke-dashoffset="0"
+                            ></circle>
+                        </svg>
+                    </div>
+                </div>
+                <div class="informativos">
+                    <div>
+                        <p>Vagas Livres</p>
+                        <span id="livres">100%</span>
+                    </div>
+                    <div>
+                        <p>Vagas Ocupadas</p>
+                        <span id="ocupadas">100%</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="vagas">
+                <li>
+                    <p>A1</p>
+                    <div>
+                        <p><i class="fa-solid fa-clock"></i> 30:00</p>
+                        <p>
+                            <i class="fa-solid fa-circle-xmark ocupado"></i>
+                            Ocupado
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <p>A2</p>
+                    <div>
+                        <p>
+                            <i class="fa-solid fa-circle-check livre"></i>
+                            Liberado
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <p>B1</p>
+                    <div>
+                        <p>
+                            <i class="fa-solid fa-circle-check livre"></i>
+                            Liberado
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <p>B2</p>
+                    <div>
+                        <p><i class="fa-solid fa-clock"></i> 30:00</p>
+                        <p>
+                            <i class="fa-solid fa-circle-xmark ocupado"></i>
+                            Ocupado
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </main>
+
+        <script src="./assets/js/app.js"></script>
+    </body>
+</html>

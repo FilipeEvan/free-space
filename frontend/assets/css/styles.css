@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #d4dcf1;
+}
+
+.conteudo {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.totalVagas {
+    display: flex;
+    width: 450px;
+    height: 250px;
+    border-radius: 25px;
+    background-color: #6c6eec;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.informativos {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.informativos div {
+    padding: 10px;
+    color: #fff;
+}
+.informativos div p {
+    font-size: 20px;
+}
+.informativos div span {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.progresso {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#svg circle {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    stroke: #9a99f5;
+    stroke-width: 6px;
+}
+#svg #bar {
+    stroke: #fff;
+    stroke-width: 12px;
+}
+#cont {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: 2em auto;
+    border-radius: 100%;
+    position: relative;
+}
+#cont:after {
+    position: absolute;
+    display: block;
+    height: 160px;
+    width: 160px;
+    left: 50%;
+    top: 50%;
+    content: attr(data-info);
+    margin-top: -80px;
+    margin-left: -80px;
+    border-radius: 100%;
+    line-height: 160px;
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+}
+
+.vagas {
+    margin-top: 50px;
+    padding: 20px;
+    width: 500px;
+    border-radius: 25px;
+    background-color: #fbfbfe;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
+    list-style: none;
+}
+.vagas li {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.vagas li div {
+    display: flex;
+}
+.vagas li div p {
+    padding: 0 10px;
+}
+.vagas li div i {
+    color: #6c6eec;
+}
+.livre {
+    color: green !important;
+}
+.ocupado {
+    color: red !important;
+}
+.vagas li:not(:last-child) {
+    border-bottom: 1px solid #d7e2f6;
+}
