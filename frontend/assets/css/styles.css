@@ -106,13 +106,10 @@ body {
 .vagas li div {
     display: flex;
 }
-.vagas li div p {
-    padding: 0 10px;
-}
-.vagas li div i {
+.vagas li i {
     color: #6c6eec;
 }
-.livre {
+.liberado {
     color: green !important;
 }
 .ocupado {
