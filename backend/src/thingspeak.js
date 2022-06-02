@@ -7,11 +7,12 @@ client.attachChannel(channel, {
   readKey: process.env.READ_KEY,
 });
 
-const minutes = 0.1;
-const interval = minutes * 60 * 1000;
+const seconds = 15;
+const interval = seconds * 1000;
 setInterval(() => {
+  console.log("Updating...");
   client.getLastEntryInChannelFeed(channel, {}, async (err, res) => {
-    if (err) return;
+    if (err || res === -1) return;
     console.log("ThingSpeak =>", res);
 
     const { client, collection } = await mongodb();
@@ -23,7 +24,5 @@ setInterval(() => {
 
     const create = await collection.insertOne(res);
     console.log("MongoDB =>", create);
-
-    client.close();
   });
 }, interval);

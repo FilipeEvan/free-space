@@ -1,26 +1,30 @@
 (function () {
     (async function () {
-        const response = await api("random?min=0&max=4&count=1");
-
-        desenhaCirculo(response[0], 4);
-
-        const data = new Date();
-        const fakeDate = data.setMinutes(data.getMinutes() - 10);
-        desenhaLista([
-            {
-                nome: "A1",
-                time: fakeDate,
-                status: "Ocupado",
-            },
-            {
-                nome: "A2",
-                time: null,
-                status: "Liberado",
-            },
-        ]);
+        setInterval(async () => {
+            const response = await api("vagas");
+            console.log(response);
+    
+            const last = response.sort((a, b) => a.data < b.data).at(-1);
+            console.log(last)
+            const sum = Number(last["field1"]) + Number(last["field2"]);
+    
+            desenhaCirculo(sum, 2);
+            desenhaLista([
+                {
+                    nome: "A1",
+                    time: last["field1"] == 1 ? new Date(last["created_at"]) : null,
+                    status: last["field1"] == 1 ? "Ocupado" : "Liberado",
+                },
+                {
+                    nome: "A2",
+                    time: last["field2"] == 1 ? new Date(last["created_at"]) : null,
+                    status: last["field2"] == 1 ? "Ocupado" : "Liberado",
+                },
+            ]);
+        }, 15000);
     })();
     async function api(rota, type = "GET") {
-        const rotaBase = "http://www.randomnumberapi.com/api/v1.0";
+        const rotaBase = "http://localhost:4000";
         const config = {};
         const response = await fetch(`${rotaBase}/${rota}`, config);
         return response.json();
@@ -55,6 +59,7 @@
     }
     async function desenhaLista(vagas) {
         const ul = document.getElementsByClassName("vagas")[0];
+        ul.innerHTML = "";
 
         vagas.forEach((vaga) => {
             const li = document.createElement("li");
